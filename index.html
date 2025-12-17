@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aizhan • Portfolio</title>
+
+<style>
+:root{
+  --bg:#07120a;                 /* dark green */
+  --card:rgba(255,255,255,.07);
+  --border:rgba(255,255,255,.18);
+  --text:#ecfff2;
+  --muted:rgba(236,255,242,.72);
+  --accent:#f5e663;             /* yellow accent */
+  --shadow:0 20px 50px rgba(0,0,0,.40);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+a{color:inherit;text-decoration:none}
+.container{max-width:1100px;margin:0 auto;padding:0 18px}
+.section{padding:70px 0}
+h1,h2,h3{margin:0 0 12px}
+p{margin:0 0 12px;color:var(--muted);line-height:1.6}
+ul{margin:10px 0 0;padding-left:18px}
+li{margin-bottom:8px;color:rgba(236,255,242,.92)}
+
+header{
+  position:sticky;top:0;z-index:10;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 22px;
+  background:rgba(7,18,10,.72);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+}
+.logo{font-weight:900;letter-spacing:.3px}
+nav{display:flex;gap:16px;flex-wrap:wrap}
+nav a{color:var(--muted);font-weight:800;font-size:14px}
+nav a:hover{color:var(--text)}
+
+.hero{
+  padding:90px 0;
+  background:
+    radial-gradient(800px 500px at 20% 30%, rgba(79,211,124,.55), transparent 60%),
+    radial-gradient(700px 500px at 80% 40%, rgba(245,230,99,.45), transparent 55%);
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.3fr 1fr;
+  gap:22px;
+  align-items:center;
+}
+.kicker{letter-spacing:.15em;font-size:12px;font-weight:900;color:var(--muted)}
+.title{font-size:54px;line-height:1.05;margin-top:10px}
+.accent{color:var(--accent)}
+.btns{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:11px 18px;border-radius:999px;
+  border:1px solid var(--border);
+  font-weight:900;
+}
+.primary{
+  background:linear-gradient(90deg,#4fd37c,#f5e663);
+  color:#07120a;
+}
+.ghost{background:var(--card);color:var(--text)}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:18px;
+  box-shadow:var(--shadow);
+}
+.grid2{display:grid;grid-template-columns:1.2fr 1fr;gap:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+
+.avatar-card{display:flex;flex-direction:column;align-items:center;gap:10px}
+.avatar-wrap{
+  width:220px;height:220px;
+  border-radius:999px;
+  padding:5px;
+  background:linear-gradient(140deg,#4fd37c,#f5e663);
+}
+.avatar{
+  width:100%;height:100%;
+  object-fit:cover;
+  border-radius:999px;
+  border:6px solid #07120a;
+  background:rgba(0,0,0,.25);
+}
+.note{color:var(--muted);font-weight:800;text-align:center}
+
+.small{font-size:13px;color:var(--muted)}
+
+.section-title{font-size:34px;text-align:center}
+.section-sub{margin-top:8px;text-align:center;color:var(--muted)}
+
+.task-block{margin-top:14px}
+.task-title{margin:0 0 8px;font-size:18px}
+.hr{height:1px;background:rgba(255,255,255,.12);margin:14px 0}
+
+footer{text-align:center;color:rgba(236,255,242,.55);padding:30px 0}
+
+@media(max-width:900px){
+  .hero-grid,.grid2,.grid3{grid-template-columns:1fr}
+  .title{font-size:44px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Aizhan.</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#tasks">Tasks</a>
+    <a href="#presentations">Presentations</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="kicker">PHYSICS STUDENT • FRONTEND LEARNER • DREAMER</div>
+      <h1 class="title">Hi, I’m <span class="accent">Aizhan</span> 👋</h1>
+      <p>
+        I am a Physics student exploring HTML, CSS, and JavaScript and building educational projects,
+        mini apps, and clean websites. This page collects my weekly tasks, project links, and presentations.
+      </p>
+      <div class="btns">
+        <a class="btn primary" href="#portfolio">View Projects</a>
+        <a class="btn ghost" href="#contact">Contact Me</a>
+      </div>
+      <p class="small" style="margin-top:12px;">
+        Photo fallback is connected to Google Drive. You can also upload your photo as <b>img/me.jpg</b>.
+      </p>
+    </div>
+
+    <div class="avatar-card">
+      <div class="avatar-wrap">
+        <!-- IMPORTANT: Upload photo to repo: img/me.jpg -->
+        <img class="avatar" src="img/me.jpg"
+             alt="Aizhan photo"
+             onerror="this.onerror=null; this.src='https://drive.google.com/uc?export=view&id=1T7s8tfptrUsy-IYmBJR94r-8uSswP-Fm';">
+      </div>
+      <div class="note">Currently: Riga, Latvia 🇱🇻</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <p class="section-sub">A short introduction and my academic path</p>
+
+    <div class="grid2" style="margin-top:22px;">
+      <div class="card">
+        <h3>Who am I?</h3>
+        <p>
+          My name is Aizhan Bolatkhan. I am a student learning front-end development step by step.
+          I enjoy clean design, practicing real layouts, and publishing my work on GitHub Pages.
+        </p>
+        <p>
+          My goal is to build a strong portfolio and become confident in web development,
+          while connecting technology with physics education.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Quick Info</h3>
+        <p><b>Major:</b> Physics</p>
+        <p><b>Course:</b> Introduction to HTML, CSS & JavaScript</p>
+        <p><b>Student ID:</b> 25-1808</p>
+        <p><b>GitHub:</b> <a target="_blank" href="https://github.com/Aizhan1805">github.com/Aizhan1805</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="section">
+  <div class="container">
+    <h2 class="section-title">Portfolio</h2>
+    <p class="section-sub">My websites and mini projects</p>
+
+    <div class="grid3" style="margin-top:22px;">
+      <div class="card">
+        <h3>AI Physics Study Assistant</h3>
+        <p>AI-powered physics learning platform (topics, Q&A, quizzes, videos).</p>
+        <div class="btns">
+          <a class="btn ghost" target="_blank" href="https://v0-ai-physics-study-assistant.vercel.app/">Open Website</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Mini Project Presentation</h3>
+        <p>Slides for my mini project.</p>
+        <div class="btns">
+          <a class="btn ghost" target="_blank" href="https://drive.google.com/file/d/10i1Blp_VA8qPqm697z0Kpf4VfbxLvUIe/preview">Preview</a>
+          <a class="btn primary" target="_blank" href="https://drive.google.com/file/d/10i1Blp_VA8qPqm697z0Kpf4VfbxLvUIe/view">Open</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Course Presentation</h3>
+        <p>Slides from my studied course.</p>
+        <div class="btns">
+          <a class="btn ghost" target="_blank" href="https://drive.google.com/file/d/1IK9nz3M77QiWduZEGphztqHi9Wqhu-bH/preview">Preview</a>
+          <a class="btn primary" target="_blank" href="https://drive.google.com/file/d/1IK9nz3M77QiWduZEGphztqHi9Wqhu-bH/view">Open</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TASKS -->
+<section id="tasks" class="section">
+  <div class="container">
+    <h2 class="section-title">Weekly Tasks</h2>
+    <p class="section-sub">All tasks till 10.12.2025</p>
+
+    <div class="card" style="margin-top:22px;">
+
+      <div class="task-block">
+        <h3 class="task-title">Task 2 — 15.10.2025</h3>
+        <ul>
+          <li>Finish and publish previous work to GitHub (teacher file)</li>
+          <li>Complete one task from the class allocation (choose 2/3/4)</li>
+          <li>Prepare my own profile as sample and upload to GitHub</li>
+        </ul>
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="task-block">
+        <h3 class="task-title">Task — 29.10.2025</h3>
+        <ul>
+          <li>Create a webpage for weekly tasks (clean layout)</li>
+          <li>Organize content by weeks and add descriptions</li>
+          <li>Publish to GitHub Pages</li>
+        </ul>
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="task-block">
+        <h3 class="task-title">Task — 05.11.2025</h3>
+        <ul>
+          <li>Create a small interactive part (mini project / combined tasks)</li>
+          <li>Improve design and structure</li>
+          <li>Commit and publish updates</li>
+        </ul>
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="task-block">
+        <h3 class="task-title">Task — 26.11.2025</h3>
+        <ul>
+          <li>Progress report certification presentation</li>
+          <li>Mini project presentation with improvement</li>
+          <li>Create HTML & CSS table (Number, Full Name, Course, Student ID, Year)</li>
+        </ul>
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="task-block">
+        <h3 class="task-title">Task — 03.12.2025</h3>
+        <ul>
+          <li>Review and read W3Schools about HTML & CSS</li>
+          <li>Prepare slides based on reading</li>
+        </ul>
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="task-block">
+        <h3 class="task-title">Final Task — 10.12.2025</h3>
+        <ul>
+          <li>Final personal profile web page including all Tasks till now and CV</li>
+          <li>Complete certification presentation</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRESENTATIONS -->
+<section id="presentations" class="section">
+  <div class="container">
+    <h2 class="section-title">Presentations</h2>
+    <p class="section-sub">My slides (Google Drive)</p>
+
+    <div class="grid3" style="margin-top:22px;">
+      <div class="card">
+        <h3>Mini Project</h3>
+        <p>AI Physics Study Assistant — presentation</p>
+        <div class="btns">
+          <a class="btn ghost" target="_blank" href="https://drive.google.com/file/d/10i1Blp_VA8qPqm697z0Kpf4VfbxLvUIe/preview">Preview</a>
+          <a class="btn primary" target="_blank" href="https://drive.google.com/file/d/10i1Blp_VA8qPqm697z0Kpf4VfbxLvUIe/view">Open</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Course Presentation</h3>
+        <p>Studied course — presentation</p>
+        <div class="btns">
+          <a class="btn ghost" target="_blank" href="https://drive.google.com/file/d/1IK9nz3M77QiWduZEGphztqHi9Wqhu-bH/preview">Preview</a>
+          <a class="btn primary" target="_blank" href="https://drive.google.com/file/d/1IK9nz3M77QiWduZEGphztqHi9Wqhu-bH/view">Open</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Project Website</h3>
+        <p>AI Physics Study Assistant — live demo</p>
+        <div class="btns">
+          <a class="btn ghost" target="_blank" href="https://v0-ai-physics-study-assistant.vercel.app/">Open Website</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="container">
+    <h2 class="section-title">Contact</h2>
+    <p class="section-sub">Let’s connect</p>
+
+    <div class="card" style="margin-top:22px;">
+      <p><b>GitHub:</b> <a target="_blank" href="https://github.com/Aizhan1805">github.com/Aizhan1805</a></p>
+      <p><b>Email:</b> sgylabejbit@gmail.com</p>
+      <p><b>Phone:</b> +77754701398</p>
+    </div>
+
+    <footer>© 2025 • Aizhan Bolatkhan</footer>
+  </div>
+</section>
+
+</body>
+</html>
